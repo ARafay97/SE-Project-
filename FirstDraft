@@ -1,0 +1,122 @@
+package se_project_1;
+
+
+import java.io.IOException;
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.*;
+
+
+
+
+public class StationUsage 
+{
+
+	static Scanner scanner = new Scanner(System.in);
+	
+
+	public static void main(String[] args) 
+	{
+		String file = "/Users/aurakiz/Desktop/Software Engineering/Data.csv";
+		BufferedReader reader = null;
+		String line=" ";
+		
+		try
+		{
+			reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+			while((line=reader.readLine()) !=null)
+			{
+				String[] row = line.split(",");
+				
+				for(String index:row)
+				{
+					System.out.printf("%-30s", index);
+				}
+			}
+					
+		}
+		catch(FileNotFoundException e)
+		{
+			System.err.println("File not found: " + e.getMessage());
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		finally
+		{
+			try {
+				reader.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+
+		
+		
+		// new instance of Booking System and scanner are initiated
+        StationUsage stationusage = new StationUsage();
+        Scanner scanner = new Scanner(System.in);
+        
+    	System.out.println("Press anything to initiate");
+    	scanner.nextLine();
+        
+       
+
+        boolean validate = false;
+        String choice = " ";
+        do
+        {
+        	
+
+        	
+        	// Main menu options are displayed
+    		System.out.println("-- Train System --");
+    		System.out.println("1 - Display Data -");
+            System.out.println("2 - Filtered Output -");
+            System.out.println("3 - Partial Search -");
+            System.out.println("4. Press Q to quit");
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextLine();
+            System.out.println(" ");
+
+            switch (choice) {
+                case "1":
+                	stationusage.displayData();   // Option to reserve a seat
+                    break;
+                case "2":
+                	stationusage.filteredOutput();    // Option to cancel a reservation
+                    break;
+                case "3":
+                	stationusage.partialSearch();   // Option to view an existing reservation
+                    break;
+            }
+
+
+        } while (!choice.equalsIgnoreCase("Q"));
+        // while loop exits if "Q" is entered
+        // Scanner is closed and a system quit message is displayed
+
+        scanner.close();
+        System.out.println("System quitted");
+        
+
+	}
+
+	private static void displayData() 
+	{
+
+		
+	}
+	private static void filteredOutput() 
+	{
+		
+	}
+	private static void partialSearch() 
+	{
+		
+	}
+
+}
