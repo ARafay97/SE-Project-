@@ -1,0 +1,23 @@
+class Station {
+
+	private String stationName;
+	private String owningCompany;
+	private String railRegion;
+	private int totalUsage;
+	private int exits;
+	private int entries;
+	private int interchanges;
+
+	public Station(String stationName, String owningCompany, String railRegion, int totalUsage, int entries, int exits,
+			int interchanges) {
+		this.entries = entries;
+		this.exits = exits;
+		this.interchanges = interchanges;
+		this.owningCompany = owningCompany;
+		this.railRegion = railRegion;
+		this.stationName = stationName;
+		this.totalUsage = totalUsage;
+
+	}
+
+}
